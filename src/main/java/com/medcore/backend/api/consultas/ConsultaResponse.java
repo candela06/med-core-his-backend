@@ -1,0 +1,3 @@
+package com.medcore.backend.api.consultas;
+import java.time.LocalDateTime;
+public record ConsultaResponse(Long id,Long pacienteId,Long profesionalId,Long admisionId,LocalDateTime fechaHora,String motivoConsulta,String anamnesis,String observacionesClinicas,String diagnostico,EstadoConsulta estado,String autor,LocalDateTime fechaCreacion){public static ConsultaResponse from(Consulta c){return new ConsultaResponse(c.getId(),c.getPacienteId(),c.getProfesionalId(),c.getAdmisionId(),c.getFechaHora(),c.getMotivoConsulta(),c.getAnamnesis(),c.getObservacionesClinicas(),c.getDiagnostico(),c.getEstado(),c.getAutor(),c.getFechaCreacion());}}

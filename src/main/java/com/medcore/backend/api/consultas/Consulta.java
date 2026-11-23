@@ -1,0 +1,12 @@
+package com.medcore.backend.api.consultas;
+import jakarta.persistence.*;import java.time.*;
+@Entity @Table(name="consultas")
+public class Consulta {
+ @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id;
+ @Column(name="paciente_id",nullable=false) private Long pacienteId; @Column(name="profesional_id",nullable=false) private Long profesionalId;
+ @Column(name="admision_id",nullable=false) private Long admisionId; @Column(name="fecha_hora",nullable=false) private LocalDateTime fechaHora;
+ @Column(name="motivo_consulta",nullable=false,length=500) private String motivoConsulta; @Column(length=3000) private String anamnesis; @Column(name="observaciones_clinicas",length=3000) private String observacionesClinicas; @Column(length=3000) private String diagnostico;
+ @Enumerated(EnumType.STRING) @Column(nullable=false) private EstadoConsulta estado; @Column(nullable=false,length=100) private String autor; @Column(name="fecha_creacion",nullable=false) private LocalDateTime fechaCreacion;
+ @PrePersist void init(){if(fechaHora==null)fechaHora=LocalDateTime.now(ZoneId.of("America/Argentina/Buenos_Aires"));if(estado==null)estado=EstadoConsulta.EN_CURSO;if(fechaCreacion==null)fechaCreacion=fechaHora;}
+ public Long getId(){return id;} public void setId(Long v){id=v;} public Long getPacienteId(){return pacienteId;} public void setPacienteId(Long v){pacienteId=v;} public Long getProfesionalId(){return profesionalId;} public void setProfesionalId(Long v){profesionalId=v;} public Long getAdmisionId(){return admisionId;} public void setAdmisionId(Long v){admisionId=v;} public LocalDateTime getFechaHora(){return fechaHora;} public void setFechaHora(LocalDateTime v){fechaHora=v;} public String getMotivoConsulta(){return motivoConsulta;} public void setMotivoConsulta(String v){motivoConsulta=v;} public String getAnamnesis(){return anamnesis;} public void setAnamnesis(String v){anamnesis=v;} public String getObservacionesClinicas(){return observacionesClinicas;} public void setObservacionesClinicas(String v){observacionesClinicas=v;} public String getDiagnostico(){return diagnostico;} public void setDiagnostico(String v){diagnostico=v;} public EstadoConsulta getEstado(){return estado;} public void setEstado(EstadoConsulta v){estado=v;} public String getAutor(){return autor;} public void setAutor(String v){autor=v;} public LocalDateTime getFechaCreacion(){return fechaCreacion;} public void setFechaCreacion(LocalDateTime v){fechaCreacion=v;}
+}

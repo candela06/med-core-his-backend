@@ -1,0 +1,1 @@
+package com.medcore.backend.api.infraestructura.habitaciones;import jakarta.validation.constraints.*;public record HabitacionRequest(@NotBlank @Size(max=20)String numero,@NotBlank @Size(max=100)String sector,@NotNull Integer piso){}

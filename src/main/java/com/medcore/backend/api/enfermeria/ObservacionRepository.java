@@ -1,0 +1,1 @@
+package com.medcore.backend.api.enfermeria;import org.springframework.data.jpa.repository.*;import org.springframework.data.domain.*;public interface ObservacionRepository extends JpaRepository<Observacion,Long>{Page<Observacion> findByInternacionId(Long internacionId,Pageable pageable);}

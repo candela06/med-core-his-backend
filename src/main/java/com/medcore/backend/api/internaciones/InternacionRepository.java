@@ -1,0 +1,1 @@
+package com.medcore.backend.api.internaciones;import org.springframework.data.jpa.repository.*;import java.util.*;public interface InternacionRepository extends JpaRepository<Internacion,Long>{List<Internacion> findByPacienteIdAndEstado(Long pacienteId,EstadoInternacion estado);}

@@ -1,0 +1,1 @@
+package com.medcore.backend.api.internaciones;import jakarta.validation.constraints.*;public record InternacionRequest(@NotNull Long pacienteId,@NotNull Long profesionalId,@NotBlank @Size(max=500)String motivoInternacion,@Size(max=3000)String diagnosticoIngreso,@NotNull Long camaId,Long admisionId){}

@@ -1,0 +1,2 @@
+package com.medcore.backend.api.consultas;
+public final class ConsultaExceptions {public static class ConsultaNoEncontradaException extends RuntimeException{public ConsultaNoEncontradaException(Long id){super("Consulta no encontrada: "+id);}} public static class ConsultaInvalidaException extends RuntimeException{public ConsultaInvalidaException(String m){super(m);}} private ConsultaExceptions(){}}
